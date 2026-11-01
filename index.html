@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URBAN STYLE | Fashion • Style • You</title>
+<style>
+:root{--ink:#171717;--cream:#f5eee4;--tan:#c9974d;--muted:#6e675f}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:5}
+.logo{font-weight:800;letter-spacing:4px;font-size:22px}.tag{font-size:10px;letter-spacing:3px;text-align:center;margin-top:4px}
+nav a{color:var(--ink);text-decoration:none;margin:0 14px;font-size:14px}
+.hero{min-height:480px;background:var(--cream);display:grid;grid-template-columns:1fr 1fr;align-items:center}
+.hero-copy{padding:60px 8%}.eyebrow{letter-spacing:4px;font-size:12px;color:var(--muted)}
+h1{font-size:clamp(38px,5vw,66px);line-height:1.05;margin:20px 0}.hero p{font-size:17px;line-height:1.6;color:#514b45;max-width:470px}
+.btn{display:inline-block;background:var(--ink);color:#fff;text-decoration:none;padding:16px 28px;margin-top:18px;font-weight:bold;letter-spacing:1px;border:0;cursor:pointer}
+.hero-image{height:100%;min-height:480px;background:#e8ded1;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+.features{display:flex;gap:28px;margin-top:38px;font-size:12px;color:#514b45;flex-wrap:wrap}
+section{padding:65px 6%}.section-head{text-align:center;margin-bottom:34px}.section-head h2{font-size:32px;margin:0 0 10px}.section-head p{color:var(--muted);margin:0}
+.filters{text-align:center;margin:0 0 28px}.filters button{background:#fff;border:1px solid #ddd;padding:10px 18px;margin:4px;cursor:pointer}.filters button.active{background:var(--ink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.card{border:1px solid #eee;padding-bottom:18px}.photo{height:240px;background:linear-gradient(135deg,#eee8df,#d8cec1);display:flex;align-items:center;justify-content:center;color:#777;font-size:13px;text-align:center;padding:15px}.card h3{font-size:16px;margin:15px 15px 6px}.price{margin:0 15px;font-weight:bold}.card small{display:block;margin:8px 15px;color:var(--muted)}.card .btn{margin:12px 15px 0;padding:12px 18px;font-size:12px}
+.note{background:#f7f4ef;text-align:center;padding:42px 6%;line-height:1.7;color:#514b45}
+footer{background:#171717;color:#fff;padding:35px 6%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:13px}
+@media(max-width:850px){nav{display:none}.hero{grid-template-columns:1fr}.hero-image{min-height:280px}.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){header{padding:0 5%}.logo{font-size:18px}.grid{grid-template-columns:1fr}.photo{height:280px}.features{gap:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div><div class="logo">URBAN STYLE</div><div class="tag">FASHION • STYLE • YOU</div></div>
+  <nav><a href="#home">Home</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+</header>
+<main>
+<section class="hero" id="home" style="padding:0">
+  <div class="hero-copy">
+    <div class="eyebrow">TRENDY&nbsp; / &nbsp;COMFORTABLE&nbsp; / &nbsp;AFFORDABLE</div>
+    <h1>Discover Your<br>Everyday Fashion.</h1>
+    <p>Fresh styles, comfortable fits and everyday essentials. Find a look that feels like you.</p>
+    <a class="btn" href="#shop">SHOP COLLECTION&nbsp; →</a>
+    <div class="features"><span>✓ Quality Styles</span><span>✓ Easy Ordering</span><span>✓ Customer Support</span></div>
+  </div>
+  <div class="hero-image"><img src="assets/urban-style-banner.png" alt="Urban Style fashion banner"></div>
+</section>
+<section id="shop">
+  <div class="section-head"><h2>Shop Our Collection</h2><p>Explore the latest styles. Replace these sample items with your own products.</p></div>
+  <div class="filters"><button class="active" onclick="filterItems('all',this)">All</button><button onclick="filterItems('men',this)">Men</button><button onclick="filterItems('women',this)">Women</button></div>
+  <div class="grid" id="products">
+    <article class="card" data-category="men"><div class="photo">Add your T-shirt product photo here</div><h3>Classic Oversized T-shirt</h3><p class="price">₹599</p><small>Sizes: S, M, L, XL • Black / White</small><a class="btn order" href="#contact" data-product="Classic Oversized T-shirt">ORDER NOW</a></article>
+    <article class="card" data-category="men"><div class="photo">Add your shirt product photo here</div><h3>Casual Everyday Shirt</h3><p class="price">₹899</p><small>Sizes: M, L, XL, XXL</small><a class="btn order" href="#contact" data-product="Casual Everyday Shirt">ORDER NOW</a></article>
+    <article class="card" data-category="women"><div class="photo">Add your top product photo here</div><h3>Everyday Comfort Top</h3><p class="price">₹699</p><small>Sizes: S, M, L, XL</small><a class="btn order" href="#contact" data-product="Everyday Comfort Top">ORDER NOW</a></article>
+    <article class="card" data-category="women"><div class="photo">Add your dress product photo here</div><h3>Minimal Style Dress</h3><p class="price">₹1,199</p><small>Sizes: S, M, L, XL</small><a class="btn order" href="#contact" data-product="Minimal Style Dress">ORDER NOW</a></article>
+  </div>
+</section>
+<div class="note" id="about"><h2>Good Clothes. Better Days.</h2>At URBAN STYLE, we believe everyday fashion should feel comfortable, look great and fit your lifestyle.</div>
+<section id="contact">
+  <div class="section-head"><h2>Ready to Order?</h2><p>Connect your Google Form order link here to collect customer orders automatically.</p></div>
+  <div style="text-align:center"><a class="btn" id="orderFormLink" href="https://forms.google.com/" target="_blank" rel="noopener">PLACE YOUR ORDER</a></div>
+  <p style="text-align:center;color:#777;font-size:12px;margin-top:18px">Before publishing, replace the sample Google Forms link with your own customer order form link.</p>
+</section>
+</main>
+<footer><strong>URBAN STYLE</strong><span>Fashion • Style • You</span><span>Contact: Add your business phone / email</span><span>© 2026 Urban Style</span></footer>
+<script>
+function filterItems(category,button){
+ document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));button.classList.add('active');
+ document.querySelectorAll('.card').forEach(card=>{card.style.display=(category==='all'||card.dataset.category===category)?'block':'none';});
+}
+document.querySelectorAll('.order').forEach(a=>a.addEventListener('click',()=>{
+ const form=document.getElementById('orderFormLink');
+ // Optional: set a prefilled Google Form URL for each product after creating your form.
+}));
+</script>
+</body>
+</html>
